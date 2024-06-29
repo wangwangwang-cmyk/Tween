@@ -1,3 +1,23 @@
-[gd_scene format=3 uid="uid://dffxig6nbti3m"]
+[gd_scene load_steps=5 format=3 uid="uid://dffxig6nbti3m"]
+
+[ext_resource type="Script" path="res://base/tweenBase.gd" id="1_15phf"]
+[ext_resource type="Texture2D" uid="uid://cfaw8ape4b2dg" path="res://icon.svg" id="1_ce01o"]
+[ext_resource type="Script" path="res://base/hpBar.gd" id="3_uhu23"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d8pfa"]
+bg_color = Color(0.121569, 0.745098, 0.152941, 1)
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_15phf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ce01o")
+
+[node name="healthBar" type="ProgressBar" parent="Sprite2D"]
+offset_left = -103.0
+offset_top = -114.0
+offset_right = 98.0
+offset_bottom = -71.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_d8pfa")
+script = ExtResource("3_uhu23")
